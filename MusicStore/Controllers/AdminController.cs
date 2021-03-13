@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MusicStore.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Administrators")]
     public class AdminController : Controller
     {
 

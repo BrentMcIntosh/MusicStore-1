@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MusicStore.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Administrators")]
     [Authorize(Policy = "DeleteAlbum")]
     public class AlbumManagementController : Controller
     {

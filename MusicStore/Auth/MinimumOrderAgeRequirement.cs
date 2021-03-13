@@ -78,15 +78,17 @@ namespace MusicStore.Auth
             //taskGetUser.Wait();
             //var birthDate = taskGetUser.Result.Birthdate;
 
-            var user = await _userManager.GetUserAsync(context.User);
-            var birthDate = user.Birthdate;
+            //var user = await _userManager.GetUserAsync(context.User);
+            //var birthDate = user.Birthdate;
 
-            var ageInYears = DateTime.Today.Year - birthDate.Year;
+            //var ageInYears = DateTime.Today.Year - birthDate.Year;
 
-            if (ageInYears >= requirement.MinimumOrderAge)
-            {
-                context.Succeed(requirement);
-            }
+            //if (ageInYears >= requirement.MinimumOrderAge)
+            //{
+            //    context.Succeed(requirement);
+            //}
+
+            context.Succeed(requirement);
 
             //return Task.CompletedTask;
         }

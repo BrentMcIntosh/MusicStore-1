@@ -7,9 +7,9 @@ namespace MusicStore.Auth
 {
     public class ApplicationUser : IdentityUser
     {
-        public DateTime Birthdate { get; set; }
-        public string City { get; set; }
-        public string Country { get; set; }
+        public DateTime Birthdate { get; set; } = new DateTime(1985, 1, 1);
+        public string City { get; set; } = "Orlando";
+        public string Country { get; set; } = "USA";
 
         /// <summary>
         /// Navigation property for the claims this user possesses.

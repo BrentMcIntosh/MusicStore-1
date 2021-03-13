@@ -30,7 +30,7 @@ namespace MusicStore
         {
             _configurationRoot = new ConfigurationBuilder()
                 .SetBasePath(hostingEnvironment.ContentRootPath)
-                .AddJsonFile($"appsettings.{hostingEnvironment.EnvironmentName}.json")
+                .AddJsonFile($"appsettings.json")
                 .Build();
         }
          
@@ -157,6 +157,12 @@ namespace MusicStore
 
 
             });
+
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<AppDbContext>();
+                context.Database.EnsureCreated();
+            }
 
         }
     }
